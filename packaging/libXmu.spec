@@ -1,7 +1,3 @@
-#
-# Please submit bugfixes or comments via http://bugs.tizen.org/
-#
-
 Name:           libXmu
 Version:        1.1.1
 Release:        1
@@ -32,12 +28,11 @@ X.Org X11 libXmu development package
 %setup -q
 
 %build
-%reconfigure --disable-static
+%configure --disable-static
 make %{?_smp_mflags}
 
 %install
 %make_install
-
 
 %remove_docs
 
