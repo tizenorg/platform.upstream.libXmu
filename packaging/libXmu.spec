@@ -2,9 +2,9 @@ Name:           libXmu
 Version:        1.1.1
 Release:        1
 License:        MIT
-Summary:        X
+Summary:        X.org Xmu library
 Url:            http://www.x.org
-Group:          System Environment/Libraries
+Group:          Graphics/X Window System
 
 Source:         %{name}-%{version}.tar.bz2
 
@@ -17,12 +17,12 @@ BuildRequires:  pkgconfig(xt)
 X.Org X11 libXmu/libXmuu runtime libraries
 
 %package devel
-Summary:        X
+Summary:        X.org Xmu library
 Group:          Development/Libraries
 Requires:       %{name} = %{version}
 
 %description devel
-X.Org X11 libXmu development package
+X.Org X11 libXmu development package.
 
 %prep
 %setup -q
@@ -41,7 +41,7 @@ make %{?_smp_mflags}
 
 %files
 %defattr(-,root,root,-)
-%doc COPYING
+%license COPYING
 %{_libdir}/libXmu.so.6
 %{_libdir}/libXmu.so.6.2.0
 %{_libdir}/libXmuu.so.1
