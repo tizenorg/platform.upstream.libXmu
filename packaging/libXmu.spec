@@ -7,6 +7,7 @@ Url:            http://www.x.org
 Group:          Graphics/X Window System
 
 Source:         %{name}-%{version}.tar.bz2
+Source1001: 	libXmu.manifest
 
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xext)
@@ -26,6 +27,7 @@ X.Org X11 libXmu development package.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 %configure --disable-static
@@ -40,6 +42,7 @@ make %{?_smp_mflags}
 %postun -p /sbin/ldconfig
 
 %files
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 %license COPYING
 %{_libdir}/libXmu.so.6
@@ -48,6 +51,7 @@ make %{?_smp_mflags}
 %{_libdir}/libXmuu.so.1.0.0
 
 %files devel
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 %dir %{_includedir}/X11/Xmu
 %{_includedir}/X11/Xmu/Atoms.h
