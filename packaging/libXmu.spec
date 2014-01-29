@@ -1,3 +1,5 @@
+%bcond_with x
+
 Name:           libXmu
 Version:        1.1.1
 Release:        1
@@ -13,6 +15,10 @@ BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xext)
 BuildRequires:  pkgconfig(xorg-macros)
 BuildRequires:  pkgconfig(xt)
+
+%if !%{with x}
+ExclusiveArch:
+%endif
 
 %description
 X.Org X11 libXmu/libXmuu runtime libraries
