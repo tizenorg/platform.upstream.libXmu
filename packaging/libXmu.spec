@@ -1,7 +1,7 @@
 %bcond_with x
 
 Name:           libXmu
-Version:        1.1.1
+Version:        1.1.2
 Release:        1
 License:        MIT
 Summary:        X.org Xmu library
@@ -36,7 +36,7 @@ X.Org X11 libXmu development package.
 cp %{SOURCE1001} .
 
 %build
-%configure --disable-static
+%autogen --disable-static
 make %{?_smp_mflags}
 
 %install
